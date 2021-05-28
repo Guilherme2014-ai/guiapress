@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../../partials/head') %> 
+<body>
+    <%- include('../../partials/navbar') %> 
+    
+    <br><br><br>
+    <div class="container">
+        <a href="/admin/categories/new"><button class="btn btn-outline-success">Criar Nova Categoria</button><br><br></a>
+        <div style="box-shadow: black 0px 2px 5px; border-radius: 5px;">
+            <div class="card-header">
+                <h3>Categorias</h3>
+            </div>
+            <table class="table table-bordered border-primary" style="border-radius: 5px;">
+                
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Titulo</th>
+                        <th>Slug</th>
+                        <th>Acoes</th>
+                    </tr>
+                </thead>
+                <tbody style="border-radius: 5px;">
+                    <% categories.forEach(category =>{ %>
+                        <tr>
+                            <th><%= category.id %></th>
+                            <th><%= category.title %></th>
+                            <th><%= category.slug %></th>
+                            <th><a href="/admin/edit/<%= category.id %>"><button class="btn btn-warning" id="button_edit">Editar</button></a>&nbsp;<a href="/admin/delete/<%= category.id %>"><button class="btn btn-outline-danger">Apagar</button></th></a>
+                        </tr>
+                    <% }) %> 
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+
+    
+</body>
+</html>
+<%- include('../../partials/scripts') %>

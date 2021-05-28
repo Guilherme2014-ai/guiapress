@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+    <a href="/" class="navbar-brand">
+        GuiaPress
+    </a>
+    <ul class="navbar-nav mr-auto">
+        <a href="/admin/categories" class="nav-link">Categorias</a>
+        <a href="/admin/articles" class="nav-link">Artigos</a>
+    </ul>
+
+    <% if(req.session.user){ %>
+        <ul class="navbar-nav ml-auto">
+            <a href="/logout" class="nav-link"><button class="btn btn-danger">Logout</button></a>
+        </ul>
+    <% }else{ %>
+        <ul class="navbar-nav ml-auto">
+            <a href="/Login" class="nav-link"><button class="btn btn-success">Login</button></a>
+        </ul>
+    <% } %>
+  </nav>

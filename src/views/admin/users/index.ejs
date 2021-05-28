@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../../partials/head') %> 
+<body>
+    <%- include('../../partials/navbar') %> 
+    
+    <br><br><br>
+    <div class="container">
+        <a href="/admin/user/create"><button class="btn btn-outline-success">Criar Novo Usuario</button><br><br></a>
+        <div style="box-shadow: black 0px 2px 5px; border-radius: 5px;">
+            <div class="card-header">
+                <h3>Users</h3>
+            </div>
+            <table class="table table-bordered border-primary" style="border-radius: 5px;;">
+                
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Email</th>
+                        <th>Acoes</th>
+                    </tr>
+                </thead>
+                <tbody style="border-radius: 5px;">
+                    <% if(users.length > 0){ %>
+                        <% users.forEach(user =>{ %>
+                            <tr>
+                                <th><%= user.id %></th>
+                                <th><%= user.email %></th>
+                                <th><a href="/admin/user/delete/<%= user.id %>"><button class="btn btn-outline-danger">Deletar</button></a></th>
+                            </tr>
+                        <% }) %> 
+                    <% }else{ %>
+                        <tr><h3 style="text-align: center;">Vazio</h3></tr>
+                    <% } %>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+
+    
+</body>
+</html>
+<%- include('../../partials/scripts') %>

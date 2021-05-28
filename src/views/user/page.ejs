@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head') %> 
+<body>
+    <%- include('../partials/Homenavbar') %> 
+    
+    <div class="container" style="padding: 1%;">
+        <% articles.forEach(article => { %>
+            <div class="card">
+
+                <div class="card-header">
+                    <small><%= article.category.title %></small>
+                    <h3><%= article.title %></h3>
+                </div>
+
+                <div class="card-body">
+
+                    <a href="/articles/<%= article.slug %>">
+                        <button class="btn btn-outline-success">Ler Artigo</button>
+                    </a>
+
+                </div>
+
+            </div><br>
+        <% }) %> 
+        <%- include('../partials/next') %>
+        <%- include('../partials/back') %>
+    </div>
+
+    
+</body>
+</html>
+<%- include('../partials/scripts') %> 

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../../partials/head') %> 
+<body>
+    <%- include('../../partials/navbar') %> 
+    
+    <br><br><br>
+    <div class="container">
+        <a href="/admin/articles/new"><button class="btn btn-outline-success">Criar Novo Artigo</button><br><br></a>
+        <div style="box-shadow: black 0px 2px 5px; border-radius: 5px;">
+            <div class="card-header">
+                <h3>Artigos</h3>
+            </div>
+            <table class="table table-bordered border-primary" style="border-radius: 5px;;">
+                
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Titulo</th>
+                        <th>Slug</th>
+                        <th>Categoria</th>
+                        <th>Acoes</th>
+                    </tr>
+                </thead>
+                <tbody style="border-radius: 5px;">
+                    <% if(articles.length > 0){ %>
+                        <% articles.forEach(article =>{ %>
+                            <tr>
+                                <th><%= article.id %></th>
+                                <th><%= article.title %></th>
+                                <th><%= article.slug %></th>
+                                <th><%= article.category.title %></th>
+                                <th><a href="/admin/articles/edit/<%= article.id %>"><button class="btn btn-warning">Editar</button></a> <a href="/admin/articles/delete/<%= article.id %>"><button class="btn btn-outline-danger">Apagar</button></a></th>
+                            </tr>
+                        <% }) %> 
+                    <% }else{ %>
+                        <tr><h3 style="text-align: center;">Vazio</h3></tr>
+                    <% } %>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+
+    
+</body>
+</html>
+<%- include('../../partials/scripts') %>

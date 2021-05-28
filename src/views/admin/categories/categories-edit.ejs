@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../../partials/head') %> 
+<body>
+    <%- include('../../partials/navbar') %>
+    
+    
+    
+    <div class="container"><br><br><br><br>
+        <div class="card">
+            <div class="card-header"><strong><h3>Cadastro de Categoria</h3></strong></div>
+            <div class="card card-body">
+                <form action="/admin/edit" method="POST">
+                        <input type="text" class="form-control" name="title" id="title" placeholder="Nome da Categoria Aqui" value="<%= title %>" required><br>
+                        <input type="hidden" name="id" id="id" value="<%= id %>">
+                        <button type="submit" class="btn btn-dark">Confirmar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>
+<%- include('../../partials/scripts') %>

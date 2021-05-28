@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../../partials/head') %> 
+<body>
+    
+    <div class="container">
+        <br><hr><br><br><br><br>
+
+        <div class="card">
+            <div class="card-header"><h2>Cadastro</h2></div>
+            <div class="card-body">
+                <form action="/admin/user/create" method="POST">
+                    <input type="email" name="email" id="email" class="form-control" placeholder="Seu Email Aqui"><br>
+                    <input type="password" name="password" id="password" class="form-control" placeholder="Sua Senha Aqui"><br>
+                    <button class="btn btn-outline-success">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+<%- include('../../partials/scripts') %> 
